@@ -54,8 +54,7 @@ notify_vol() {
     # cap the icon at 100 if vol > 100
     [ "$angle" -gt 100 ] && angle=100
     ico="${icodir}/${iconStyle}-${angle}.svg"
-    bar=$(seq -s "." $((vol / 15)) | sed 's/[0-9]//g')
-    [[ "${isNotify}" == true ]] && notify-send -a "HyDE Notify" -r 8 -t 800 -i "${ico}" "${vol}${bar}" "${nsink}"
+    [[ "${isNotify}" == true ]] && notify-send -a "HyDE Notify" -r 8 -t 800 -i "${ico}" "${vol}%" "${nsink}"
 }
 
 notify_mute() {
